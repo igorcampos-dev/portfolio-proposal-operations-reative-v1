@@ -19,5 +19,20 @@ spring:
     schemas: ${DB_SCHEMA}
     baselineOnMigrate: ${BASE_LINE_ON_MIGRATE}
 
+springdoc:
+  show-actuator: true
+  version: 1.0
+  api-docs:
+    path: /v3/api-docs
+    enabled: ${SWAGGER_DOC_ENABLED}
+  swagger-ui:
+    disable-swagger-default-url: true
+    path: /swagger
+    enabled: ${SWAGGER_UI_ENABLED}
+    operationsSorter: alpha
+    tagsSorter: alpha
+    configUrl: ${SWAGGER_CONFIG_URL}
+    url: ${SWAGGER_URL}
+
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration

@@ -29,3 +29,7 @@ services:
       FLYWAY_ENABLED: true
       DB_SCHEMA: public
       BASE_LINE_ON_MIGRATE: true
+      SWAGGER_DOC_ENABLED: true
+      SWAGGER_UI_ENABLED: true
+      SWAGGER_CONFIG_URL: /v3/api-docs/swagger-config
+      SWAGGER_URL: /v3/api-docs

@@ -2,6 +2,7 @@ server:
   port: ${SPRING_SERVER_PORT:8091}
 
 spring:
+
   datasource:
     url: ${DB_URL:jdbc:postgresql://localhost:5432/web_proposals_api}
     username: ${DB_USERNAME:postgres}
@@ -21,6 +22,21 @@ spring:
 
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration
+
+springdoc:
+  show-actuator: true
+  version: 1.0
+  api-docs:
+    path: /v3/api-docs
+    enabled: ${SWAGGER_DOC_ENABLED:true}
+  swagger-ui:
+    disable-swagger-default-url: true
+    path: /swagger
+    enabled: ${SWAGGER_UI_ENABLED:true}
+    operationsSorter: alpha
+    tagsSorter: alpha
+    configUrl: ${SWAGGER_CONFIG_URL:/v3/api-docs/swagger-config}
+    url: ${SWAGGER_URL:/v3/api-docs}
 
 logging:
   level:

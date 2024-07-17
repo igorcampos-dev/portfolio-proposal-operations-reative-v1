@@ -1,10 +1,10 @@
 package com.portfolio.proposals.operations.exception;
 
 import com.portfolio.proposals.operations.model.dto.response.ErrorResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -13,6 +13,9 @@ import java.time.format.DateTimeParseException;
 
 @RestControllerAdvice
 @SuppressWarnings("unused")
+@ApiResponse(description = "Campo inválido", responseCode = "400")
+@ApiResponse(description = "Formato da data inválido", responseCode = "400")
+@ApiResponse(description = "Proposta não encontrada no banco de dados", responseCode = "404")
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
