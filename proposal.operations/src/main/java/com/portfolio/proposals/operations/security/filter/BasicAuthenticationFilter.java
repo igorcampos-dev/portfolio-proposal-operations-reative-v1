@@ -1,5 +1,6 @@
 package com.portfolio.proposals.operations.security.filter;
 
+import com.portfolio.proposals.operations.security.SecurityConfiguration;
 import com.portfolio.proposals.operations.security.authentication.KeyAuthentication;
 import com.portfolio.proposals.operations.security.response.FilterErrorResponse;
 import jakarta.servlet.FilterChain;
@@ -27,6 +28,13 @@ public class BasicAuthenticationFilter extends OncePerRequestFilter {
             FilterErrorResponse.getError(response, e, request);
         }
 
+    }
+
+    @Override
+    protected boolean shouldNotFilter(@NonNull HttpServletRequest request) {
+        return SecurityConfiguration.defaultRoutes()
+                                    .stream()
+                                    .anyMatch(route -> request.getServletPath().contains(route));
     }
 
 }
