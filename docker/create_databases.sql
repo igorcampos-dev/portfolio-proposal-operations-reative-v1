@@ -1,0 +1,3 @@
+CREATE DATABASE web_proposals_api;
+CREATE DATABASE web_proposals_api_dev;
+CREATE DATABASE web_proposals_api_hml;

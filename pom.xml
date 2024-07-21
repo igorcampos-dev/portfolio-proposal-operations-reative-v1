@@ -4,6 +4,9 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.proposals</groupId>
     <artifactId>web.proposals</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>web.proposals</name>
+    <description>Geral</description>
 
     <modules>
         <module>proposal.operations</module>

@@ -1,0 +1,12 @@
+server:
+  port: ${SPRING_SERVER_PORT}
+
+spring:
+  r2dbc:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  sql:
+    init:
+      mode: ${DB_SQL_MODE}
+    platform: ${DB_PLATFORM}

@@ -7,9 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 
 @Data
@@ -36,7 +35,9 @@ public class ProposalEntity {
     private String phoneContracted;
     private String emailContracted;
     private String contractDescription;
-    private String value;
+
+    @Column(precision = 15, scale = 2, nullable = false)
+    private BigDecimal value;
     private String term;
 
     @Enumerated(EnumType.STRING)
