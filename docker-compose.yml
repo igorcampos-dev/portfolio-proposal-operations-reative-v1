@@ -8,7 +8,8 @@ services:
     environment:
       POSTGRES_PASSWORD: password
       POSTGRES_USER: postgres
-      POSTGRES_DB: web_proposals_api
+    volumes:
+      - ./docker/create_databases.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - 5432:5432
 

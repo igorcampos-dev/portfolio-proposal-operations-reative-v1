@@ -31,5 +31,5 @@ public class ProposalEntity {
     private String contractDescription;
     private String value;
     private String term;
-    private Status status;
+    private String status;
 }

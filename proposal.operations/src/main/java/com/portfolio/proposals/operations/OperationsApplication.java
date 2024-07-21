@@ -1,4 +1,4 @@
-package com.portfolio.proposals.consumer;
+package com.portfolio.proposals.operations;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

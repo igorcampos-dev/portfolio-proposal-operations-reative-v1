@@ -4,7 +4,6 @@ import com.portfolio.proposals.operations.model.entity.ProposalEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-
 import java.util.Optional;
 
 
@@ -17,8 +16,7 @@ public interface ProposalRepository extends JpaRepository<ProposalEntity, Long> 
     Optional<ProposalEntity> findByProposalId(String proposalId);
 
     default ProposalEntity findByProposalIdOrThrow(String proposalId) {
-        return this.findByProposalId(proposalId)
-                .orElseThrow(() -> new NullPointerException("Proposta não encontrada"));
+        return this.findByProposalId(proposalId).orElseThrow(() -> new NullPointerException("Proposta não encontrada"));
     }
 
 }
