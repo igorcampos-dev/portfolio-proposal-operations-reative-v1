@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -28,7 +29,7 @@ public class ProposalGetResponse {
     private String phoneContracted;
     private String emailContracted;
     private String contractDescription;
-    private String value;
+    private BigDecimal value;
     private String term;
     private Status status;
 

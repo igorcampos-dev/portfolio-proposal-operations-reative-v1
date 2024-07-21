@@ -9,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import java.util.List;
+import java.util.Objects;
 
 @Slf4j
 @Service
@@ -20,8 +21,6 @@ public class ProposalServiceImpl implements ProposalService {
 
     @Override
     public void processProposal() {
-        log.info("Iniciou o processo das propostas");
-
         Flux<ProposalEntity> proposals = proposalsRepository.findByStatusOrNull(Status.PROCESS.toString());
 
         proposals.collectList()
@@ -31,10 +30,9 @@ public class ProposalServiceImpl implements ProposalService {
     }
 
     private void execute(List<ProposalEntity> proposalList){
-        if (!proposalList.isEmpty()) {
-            proposalList.forEach(this::print);
-        }
-
+        proposalList.stream()
+                    .filter(Objects::nonNull)
+                    .forEach(this::print);
     }
 
     private void print(ProposalEntity proposal){
@@ -59,6 +57,5 @@ public class ProposalServiceImpl implements ProposalService {
         }
 
     }
-
 
 }

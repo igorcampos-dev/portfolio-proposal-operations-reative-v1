@@ -1,11 +1,11 @@
 package com.portfolio.proposals.consumer.model.entity;
 
-import com.portfolio.proposals.consumer.model.entity.fields.Status;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Data
@@ -29,7 +29,7 @@ public class ProposalEntity {
     private String phoneContracted;
     private String emailContracted;
     private String contractDescription;
-    private String value;
+    private BigDecimal value;
     private String term;
     private String status;
 }

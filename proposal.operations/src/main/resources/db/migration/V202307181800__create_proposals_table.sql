@@ -13,7 +13,7 @@ CREATE TABLE TB_PROPOSAL (
     phone_contracted VARCHAR(20),
     email_contracted VARCHAR(255),
     contract_description TEXT,
-    value VARCHAR(50),
+    value DECIMAL(15, 2),
     term VARCHAR(255),
     status VARCHAR(10) CHECK (status IN ('PROCESS', 'FINISHED', 'ERROR'))
 );

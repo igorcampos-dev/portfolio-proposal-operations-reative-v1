@@ -4,7 +4,7 @@ services:
 
   database:
     image: postgres:13
-    container_name: matrix
+    container_name: database
     environment:
       POSTGRES_PASSWORD: password
       POSTGRES_USER: postgres
@@ -34,3 +34,17 @@ services:
       SWAGGER_UI_ENABLED: true
       SWAGGER_CONFIG_URL: /v3/api-docs/swagger-config
       SWAGGER_URL: /v3/api-docs
+
+  proposal-consumer:
+    build:
+      context: ./proposal.consumer
+    ports:
+      - "81:81"
+    environment:
+      SPRING_PROFILES_ACTIVE: cloud
+      SPRING_SERVER_PORT: 81
+      DB_URL: r2dbc:postgresql://database:5432/web_proposals_api
+      DB_USERNAME: postgres
+      DB_PASSWORD: password
+      DB_SQL_MODE: always
+      DB_PLATFORM: postgres
