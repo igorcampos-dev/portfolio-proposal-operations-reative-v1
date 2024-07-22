@@ -13,7 +13,6 @@ spring:
     open-in-view: ${DB_OPEN_VIEW}
     hibernate:
       ddl-auto: ${DB_DDL_AUTO}
-
   flyway:
     enabled: ${FLYWAY_ENABLED}
     schemas: ${DB_SCHEMA}

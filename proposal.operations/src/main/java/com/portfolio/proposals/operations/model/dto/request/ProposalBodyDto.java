@@ -5,6 +5,8 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
+
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Data
@@ -23,7 +25,7 @@ public class ProposalBodyDto {
     @NotNull(message = "O campo `contract_description` não pode ser nulo")
     private String contract_description;
     @NotNull(message = "O campo `value` não pode ser nulo")
-    private String value;
+    private BigDecimal value;
     @NotNull(message = "O campo `term` não pode ser nulo")
     private String term;
 

@@ -1,21 +1,21 @@
-package com.portfolio.proposals.operations.model.dto.response;
+package com.portfolio.proposals.consumer.model.entity;
 
-import com.portfolio.proposals.operations.model.entity.fields.Status;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Data
-@Builder
-@AllArgsConstructor
 @NoArgsConstructor
-public class ProposalGetResponse {
+@AllArgsConstructor
+@Table(name = "TB_PROPOSAL")
+public class ProposalEntity {
 
+    @Id
+    private Long id;
     private String proposalId;
     private LocalDate date;
     private String nameContractor;
@@ -31,6 +31,5 @@ public class ProposalGetResponse {
     private String contractDescription;
     private BigDecimal value;
     private String term;
-    private Status status;
-
+    private String status;
 }

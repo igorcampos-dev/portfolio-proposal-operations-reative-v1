@@ -2,7 +2,6 @@ server:
   port: ${SPRING_SERVER_PORT:8091}
 
 spring:
-
   datasource:
     url: ${DB_URL:jdbc:postgresql://localhost:5432/web_proposals_api}
     username: ${DB_USERNAME:postgres}
@@ -14,12 +13,10 @@ spring:
     open-in-view: ${DB_OPEN_VIEW:false}
     hibernate:
       ddl-auto: ${DB_DDL_AUTO:update}
-
   flyway:
     enabled: ${FLYWAY_ENABLED:true}
     schemas: ${DB_SCHEMA:public}
     baselineOnMigrate: ${BASE_LINE_ON_MIGRATE:true}
-
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration
 
