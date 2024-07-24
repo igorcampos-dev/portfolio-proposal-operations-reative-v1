@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-@SuppressWarnings("unused")
 public class ProposalServiceImpl implements ProposalService {
 
     private final ProposalRepository proposalRepository;
